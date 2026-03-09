@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Den Besten VOF // Digitale oplossingen // DenBestenWerkt.com</title>
+
+    <style>
+        /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+        /* Document
+   ========================================================================== */
+
+        /**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+        html {
+            line-height: 1.15;
+            /* 1 */
+            -webkit-text-size-adjust: 100%;
+            /* 2 */
+        }
+
+        /* Sections
+     ========================================================================== */
+
+        /**
+   * Remove the margin in all browsers.
+   */
+
+        body {
+            margin: 0;
+        }
+
+        /**
+   * Render the `main` element consistently in IE.
+   */
+
+        main {
+            display: block;
+        }
+
+        /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+
+        h1 {
+            font-size: 2em;
+            margin: .67em 0;
+        }
+
+        /* Grouping content
+     ========================================================================== */
+
+        /**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+
+        hr {
+            box-sizing: content-box;
+            /* 1 */
+            height: 0;
+            /* 1 */
+            overflow: visible;
+            /* 2 */
+        }
+
+        /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+
+        pre {
+            font-family: monospace, monospace;
+            /* 1 */
+            font-size: 1em;
+            /* 2 */
+        }
+
+        /* Text-level semantics
+     ========================================================================== */
+
+        /**
+   * Remove the gray background on active links in IE 10.
+   */
+
+        a {
+            background: transparent;
+        }
+
+        /**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+
+        abbr[title] {
+            border-bottom: none;
+            /* 1 */
+            text-decoration: underline;
+            /* 2 */
+            text-decoration: underline dotted;
+            /* 2 */
+        }
+
+        /**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+
+        b,
+        strong {
+            font-weight: bolder;
+        }
+
+        /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+
+        code,
+        kbd,
+        samp {
+            font-family: monospace, monospace;
+            /* 1 */
+            font-size: 1em;
+            /* 2 */
+        }
+
+        /**
+   * Add the correct font size in all browsers.
+   */
+
+        small {
+            font-size: 80%;
+        }
+
+        /**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+
+        sub {
+            bottom: -0.25em;
+        }
+
+        sup {
+            top: -0.5em;
+        }
+
+        /* Embedded content
+     ========================================================================== */
+
+        /**
+   * Remove the border on images inside links in IE 10.
+   */
+
+        img {
+            border-style: none;
+        }
+
+        /* Forms
+     ========================================================================== */
+
+        /**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            /* 1 */
+            font-size: 100%;
+            /* 1 */
+            line-height: 1.15;
+            /* 1 */
+            margin: 0;
+            /* 2 */
+        }
+
+        /**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+
+        button,
+        input {
+            /* 1 */
+            overflow: visible;
+        }
+
+        /**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+
+        button,
+        select {
+            /* 1 */
+            text-transform: none;
+        }
+
+        /**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+
+        button,
+        [type="button"],
+        [type="reset"],
+        [type="submit"] {
+            -webkit-appearance: button;
+        }
+
+        /**
+   * Remove the inner border and padding in Firefox.
+   */
+
+        button::-moz-focus-inner,
+        [type="button"]::-moz-focus-inner,
+        [type="reset"]::-moz-focus-inner,
+        [type="submit"]::-moz-focus-inner {
+            border-style: none;
+            padding: 0;
+        }
+
+        /**
+   * Restore the focus styles unset by the previous rule.
+   */
+
+        button:-moz-focusring,
+        [type="button"]:-moz-focusring,
+        [type="reset"]:-moz-focusring,
+        [type="submit"]:-moz-focusring {
+            outline: 1px dotted ButtonText;
+        }
+
+        /**
+   * Correct the padding in Firefox.
+   */
+
+        fieldset {
+            padding: .35em .75em .625em;
+        }
+
+        /**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+
+        legend {
+            box-sizing: border-box;
+            /* 1 */
+            color: inherit;
+            /* 2 */
+            display: table;
+            /* 1 */
+            max-width: 100%;
+            /* 1 */
+            padding: 0;
+            /* 3 */
+            white-space: normal;
+            /* 1 */
+        }
+
+        /**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+
+        progress {
+            vertical-align: baseline;
+        }
+
+        /**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+
+        textarea {
+            overflow: auto;
+        }
+
+        /**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+
+        [type="checkbox"],
+        [type="radio"] {
+            box-sizing: border-box;
+            /* 1 */
+            padding: 0;
+            /* 2 */
+        }
+
+        /**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+
+        [type="number"]::-webkit-inner-spin-button,
+        [type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+
+        /**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+
+        [type="search"] {
+            -webkit-appearance: textfield;
+            /* 1 */
+            outline-offset: -2px;
+            /* 2 */
+        }
+
+        /**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+
+        [type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        /**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            /* 1 */
+            font: inherit;
+            /* 2 */
+        }
+
+        /* Interactive
+     ========================================================================== */
+
+        /*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+
+        details {
+            display: block;
+        }
+
+        /*
+   * Add the correct display in all browsers.
+   */
+
+        summary {
+            display: list-item;
+        }
+
+        /* Misc
+     ========================================================================== */
+
+        /**
+   * Add the correct display in IE 10+.
+   */
+
+        template {
+            display: none;
+        }
+
+        /**
+   * Add the correct display in IE 10.
+   */
+
+        [hidden] {
+            display: none;
+        }
+    </style>
+
+    <style>
+        @import url(https://rsms.me/inter/inter.css);
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
+
+
+        :root {
+            --color-dark: #0a0a0a;
+            --color-primary-light: #fffdfa;
+            --color-primary: #ff9900;
+            --color-primary-dark: #050300;
+            font-size: 16px;
+        }
+
+        html {
+            height: 100%;
+            box-sizing: border-box;
+            color: var(--color-primary-dark);
+            font-family: "Geist Mono", monospace;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0;
+            -moz-osx-font-smoothing: grayscale;
+
+            background-color: hsl(230deg 75% 60% / 10%);
+
+            /* background-image:
+                radial-gradient(ellipse at 100% 100%,
+                    hsl(254 100% 6% / 0.07),
+                    #aa00a703,
+                    transparent),
+                linear-gradient(to bottom right,
+                    #f7fbf2,
+                    #f9f7ff,
+                    #f2e9fe,
+                    #eef9de); */
+
+
+
+
+            /* background-image: radial-gradient(48.1% 66.96% at 64.92% 24.83%, hsl(229.04deg 100% 81.76% / 43%) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(40.77% 96.07% at 101.48% 80.42%, hsl(242.3deg 100% 79% / 20%) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(85.19% 200.73% at 4.21% 91.78%, hsl(231deg 75% 85% / 65%) 0%, rgba(255, 255, 255, 0) 100%);
+            background-color: #FFF; */
+
+            background-color: hsl(230 88% 99% / 1);
+            background-image: radial-gradient(67.04% 67.04% at 109.05% 32.96%, hsl(34 88% 98% / 1) 0%, hsl(230deg 88% 85% / 0%) 100%), linear-gradient(338.28deg, hsl(81 65% 97% / 1) 14.5%, hsl(230deg 88% 96% / 0%) 65.81%);
+
+
+            background-image: radial-gradient(ellipse at 100% 100%, hsl(254 100% 6% / 0.07), #aa00a703, transparent), linear-gradient(to bottom right, #f7fbf2, #f9f7ff, #f2e9fe, #eef9de);
+        
+            background-image: radial-gradient(ellipse at 100% 100%, hsl(230deg 100% 6% / 7%), hsl(254.35deg 100% 33% / 1%), transparent), linear-gradient(to bottom right, hsl(80 63% 95% / 1), hsl(270 90% 99% / 1), hsl(240 91% 95% / 1), hsl(254.35deg 100% 33% / 1%), hsl(84 69% 93% / 1));
+        
+        
+        
+        }
+        
+
+        body {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header {
+            --p-fluid: clamp(1rem, calc(5 / 60 * 100vw), 5rem);
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 60rem;
+            margin: 0 1rem;
+            padding: var(--p-fluid);
+            min-height: 50dvh;
+            border: 1px solid #fff;
+            border-bottom: 2px solid #fff;
+            border-radius: var(--p-fluid);
+            background-image: linear-gradient(to bottom, #fff 25%, rgb(255 255 255 / 50%));
+            backdrop-filter: blur(100px);
+            box-shadow: 0 .25em .5em .25em hsl(0deg 100% 100% / 10%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        h1,
+        h2 {
+            font-family: "Michroma", sans-serif;
+            margin-top: 0;
+            font-weight: 400;
+            -webkit-text-stroke-width: .0375em;
+            letter-spacing: -.005em;
+        }
+
+        h1 {
+            font-size: clamp(2rem, calc(5 / 60 * 100vw), 5rem);
+            line-height: 1.2em;
+            margin-bottom: clamp(1rem, calc(1.5 / 60 * 100vw), 1.5rem);
+            color: var(--color-primary);
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, calc(2 / 60 * 100vw), 2rem);
+            line-height: 1.4em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: .22s ease;
+        }
+
+        ::selection {
+            background-color: #ff9900;
+            color: #fff;
+        }
+
+        .logo {
+            max-height: 71px;
+            width: auto;
+            margin-block: 1rem;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            column-gap: 1rem;
+            margin-bottom: -.5rem;
+        }
+
+        .content-box--end {
+            display: inline-flex;
+            align-items: flex-end;
+        }
+
+        .content-item {
+            margin-bottom: .5em;
+            font-size: 1.25rem;
+        }
+
+
+        .link {
+            background:
+                linear-gradient(color-mix(in srgb, #ff9900, transparent 40%) 0 0) var(--p, 0) 100% /var(--d, 0) 2px no-repeat;
+            transition: 0.3s, background-position 0s 0.3s;
+        }
+
+        .link:hover {
+            --d: 100%;
+            --p: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div><img src="denbestenwerkt-logo.png" alt="" width="371" height="142" class="logo"></div>
+        <h1>Digital solutions</h1>
+
+        <h2>Den Besten VOF</h2>
+
+        <div class="content">
+            <div class="content-box content-box--start">
+                <div class="content-item">KvK: 08065209</div>
+                <div class="content-item">BTW: NL8056.80.846B01</div>
+            </div>
+            <div class="content-box content-box--end">
+                <div class="content-item"><a class="link" id="emailLink" href="#" onclick="sendEmail()"></a></div>
+            </div>
+        </div>
+
+    </header>
+
+
+    <script>
+        function encodeEmail(email) {
+            return email
+                .split('')
+                .map(char => `&#${char.charCodeAt(0)};`)
+                .join('');
+        }
+
+        function sendEmail() {
+            const parts = ['mai', 'lto', ':', 'ron', '@', 'denbestenwerkt', '.', 'com'];
+            const emailLink = parts.join('');
+            window.location.href = emailLink;
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const emailParts = ['ron', '@', 'denbestenwerkt', '.', 'com'];
+            const emailText = encodeEmail(emailParts.join('')); // Encode het e-mailadres
+            document.getElementById('emailLink').innerHTML = emailText; // Voeg de gecodeerde tekst toe
+        });
+    </script>
+
+</body>
+</html>
